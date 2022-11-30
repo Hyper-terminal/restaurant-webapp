@@ -1,0 +1,24 @@
+.summary {
+    margin: auto;
+    color: white;
+    padding: 1rem;
+    width: 50rem;
+    text-align: center;
+    margin-top: 8rem;
+    
+}
+
+.summary h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary p {
+    font-weight: bold;
+}
+
+.summary p:last-child {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,19 @@
+.meal-list {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+.meal-list__price {
+    color: #a75e3f;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.meal-list__break {
+    width: 98%;
+    color: darkgray;
+    margin-bottom: 1rem;
+}

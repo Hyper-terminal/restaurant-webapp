@@ -8,10 +8,13 @@
 
 html {
   font-family: 'Noto Sans JP', sans-serif;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   margin: 0;
   background-color: #3f3f3f;
   height: 100vh;
+  width: 100vw;
 }
