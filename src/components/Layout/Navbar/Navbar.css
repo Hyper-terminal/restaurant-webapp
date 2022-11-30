@@ -1,0 +1,23 @@
+.header {
+	background-color: #762009;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1rem 10rem;
+	align-items: center;
+}
+
+.header h2 {
+	color: white;
+
+}
+
+@media screen and (max-width: 480px){
+	.header {
+		flex-direction: column;
+		padding: 1rem 5rem;
+		align-items: center;
+		justify-content: center;
+	}
+}
