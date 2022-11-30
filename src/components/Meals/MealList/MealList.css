@@ -1,9 +1,15 @@
-.meal-list {
+.meal-list__card {
     background-color: white;
-    width: 80%;
+    width: 80vw;
     margin: auto;
     padding: 2rem;
     margin-top: 5rem;
+}
+
+.meal-list__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .meal-list__price {
@@ -16,4 +22,15 @@
     width: 98%;
     color: darkgray;
     margin-bottom: 1rem;
+}
+
+.meal-list__details {
+    display: inline-block;
+}
+
+@media screen and (max-width: 480px) {
+    .meal-list__container {
+        flex-direction: column;
+        justify-content: center;
+    }
 }

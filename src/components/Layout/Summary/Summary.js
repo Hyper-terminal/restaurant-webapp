@@ -1,9 +1,9 @@
 import Card from "../../UI/Card/Card";
-import "./Summary.css";
+import classes from "./Summary.module.css";
 
 const Summary = () => {
     return (
-        <Card className='summary'>
+        <Card className={classes.summary}>
             <h2>Delicious Food, Delivered To You</h2>
             <p>
                 Choose your favorite meal from our broad selectioin of available
