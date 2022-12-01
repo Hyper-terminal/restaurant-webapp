@@ -1,18 +1,17 @@
 import React from 'react';
 
-import HeaderCart from "./HeaderCart";
-import  "./Navbar.css";
+import NavbarCart from './NavbarCart';
+import './Navbar.css';
 
-const Navbar = () => {
-    return (
-        <>
-            <header className="header">
-                <h2>ReactMeals</h2>
-                <HeaderCart />
-            </header>
-          
-        </>
-    );
+const Navbar = (props) => {
+  return (
+    <>
+      <header className="header">
+        <h2>ReactMeals</h2>
+        <NavbarCart onClick={props.onShowCart} />
+      </header>
+    </>
+  );
 };
 
 export default Navbar;

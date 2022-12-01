@@ -8,7 +8,7 @@ const CartModal = (props) => {
   const Cart = () => {
     return (
       <>
-        <div className={classes.cart__backdrop} />
+        <div onClick={props.onhideCart} className={classes.cart__backdrop} />
         <Card className={classes.cart}>
           <h4>Sushi</h4>
           <div className={classes.cart_mealPrice}>
@@ -16,7 +16,11 @@ const CartModal = (props) => {
             <h2>12.99</h2>
           </div>
           <div className={classes.cart_buttons}>
-            <Button className={classes.closeButton} name="Close" />
+            <Button
+              className={classes.closeButton}
+              onClick={props.onhideCart}
+              name="Close"
+            />
             <Button className={classes.orderButton} name="Order" />
           </div>
         </Card>

@@ -1,0 +1,28 @@
+.header__cart {
+  background-color: #3f1200;
+  border-radius: 3rem;
+  color: white;
+  padding-top: 0.1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.header__cart:hover {
+  background-color: black;
+}
+
+.header__cart h3 {
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.header-cart__counter {
+  background-color: #a53219;
+  display: inline-block;
+  margin-left: 1rem;
+  width: 2rem;
+  border-radius: 1rem;
+  padding-left: 0.7rem;
+  margin-right: 0.7rem;
+}

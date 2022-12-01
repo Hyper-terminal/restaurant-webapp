@@ -1,36 +1,37 @@
 .meal-list__card {
-    background-color: white;
-    width: 80vw;
-    margin: auto;
-    padding: 2rem;
-    margin-top: 5rem;
+  background-color: white;
+  width: 65vw;
+  margin: auto;
+  padding: 2rem;
+  margin-top: 5rem;
 }
 
 .meal-list__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .meal-list__price {
-    color: #a75e3f;
-    margin-bottom: 1rem;
-    font-weight: bold;
+  color: #a75e3f;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .meal-list__break {
-    width: 98%;
-    color: darkgray;
-    margin-bottom: 1rem;
+  width: 98%;
+  color: darkgray;
+  margin-bottom: 1rem;
 }
 
 .meal-list__details {
-    display: inline-block;
+  display: inline-block;
 }
 
 @media screen and (max-width: 480px) {
-    .meal-list__container {
-        flex-direction: column;
-        justify-content: center;
-    }
+  .meal-list__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

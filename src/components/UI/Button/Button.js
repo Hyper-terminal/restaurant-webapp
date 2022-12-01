@@ -5,7 +5,11 @@ const Button = (props) => {
   const newStyles = props.className + '';
 
   return (
-    <button className={`${classes.button} ${newStyles}`} type={props.type}>
+    <button
+      onClick={props.onClick}
+      className={`${classes.button} ${newStyles}`}
+      type={props.type}
+    >
       {props.name}
     </button>
   );
