@@ -4,6 +4,7 @@ import Navbar from './components/Layout/Navbar/Navbar';
 import Summary from './components/Layout/Summary/Summary';
 import MealList from './components/Meals/MealList/MealList';
 import CartModal from './components/Cart/CartModal';
+import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -11,17 +12,18 @@ function App() {
   const showCartHandler = () => {
     setCartIsShown(true);
   };
+
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
 
   return (
-    <>
-      {cartIsShown && <CartModal onhideCart={hideCartHandler}/>}
+    <CartProvider>
+      {cartIsShown && <CartModal onhideCart={hideCartHandler} />}
       <Navbar onShowCart={showCartHandler} />
       <Summary />
       <MealList />
-    </>
+    </CartProvider>
   );
 }
 

@@ -1,15 +1,23 @@
-import React from "react";
-import Button from "../../UI/Button/Button";
-import classes from "./MealListForm.module.css";
+import React, { useContext } from 'react';
+import Button from '../../UI/Button/Button';
+import classes from './MealListForm.module.css';
+import CartContext from '../../../store/cart-context';
 
 const MealListForm = () => {
-    return (
-        <form className={classes.form}>
-            <label htmlFor="meal-count">Amount</label>
-            <input type="number" name="meal-count" />
-            <Button name="+Add" type="submit" />
-        </form>
-    );
+  const cartCtx = useContext(CartContext);
+
+  const addItemToCart = (event) => {
+    event.preventDefault();
+    const count = event.target.meal_count.value;
+  };
+
+  return (
+    <form onSubmit={addItemToCart} className={classes.form}>
+      <label htmlFor="meal_count">Amount</label>
+      <input type="number" name="meal_count" min="1" />
+      <Button name="+Add" type="submit" />
+    </form>
+  );
 };
 
 export default MealListForm;
