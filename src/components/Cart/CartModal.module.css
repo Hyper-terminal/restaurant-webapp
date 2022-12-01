@@ -1,0 +1,63 @@
+.cart {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40%;
+  height: 10rem;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.cart__backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.cart h4 {
+  font-weight: 300;
+}
+
+.cart_mealPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.cart_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.closeButton {
+  border: 2px solid #762009;
+  color: #762009;
+  background-color: white;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+}
+
+.orderButton {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.orderButton:hover {
+  transform: scale(1.1);
+}

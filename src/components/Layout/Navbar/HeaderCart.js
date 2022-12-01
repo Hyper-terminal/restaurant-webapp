@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 import "./HeaderCart.css";
 import CartItemCounter from "./CartItemCounter";
 

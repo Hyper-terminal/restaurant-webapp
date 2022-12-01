@@ -1,3 +1,5 @@
+import React from 'react';
+
 import HeaderCart from "./HeaderCart";
 import  "./Navbar.css";
 
