@@ -19,10 +19,11 @@
 
 .header-cart__counter {
   background-color: #a53219;
-  display: inline-block;
   margin-left: 1rem;
-  width: 2rem;
+  display: inline-block;
   border-radius: 1rem;
-  padding-left: 0.7rem;
+  padding: 0% 1rem;
   margin-right: 0.7rem;
+  text-align: center;
+  font-weight: bold;
 }

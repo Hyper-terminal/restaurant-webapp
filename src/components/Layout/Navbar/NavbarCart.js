@@ -5,15 +5,16 @@ import './NavbarCart.css';
 const NavbarCart = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const numberOfCartItems = cartCtx.items.reduce((accumulator, item) => {
-    return accumulator + item.quantity;
-  }, 0);
+  let qty = 0;
+  cartCtx.items.forEach((item) => {
+    qty += Number(item.quantity);
+  });
 
   return (
     <>
       <div onClick={props.onClick} className="header__cart">
         <h3>🛒 Your Cart </h3>
-        <div className="header-cart__counter">{numberOfCartItems}</div>
+        <div className="header-cart__counter">{qty}</div>
       </div>
     </>
   );
