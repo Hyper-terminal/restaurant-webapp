@@ -24,31 +24,33 @@ const CartModal = (props) => {
       <>
         <div onClick={props.onhideCart} className={classes.cart__backdrop} />
         <Card className={classes.cart}>
-          <ul>
-            {cartCtx.items.map((mealObj) => {
-              return (
-                <CartItem
-                  key={mealObj.id}
-                  name={mealObj.mealName}
-                  price={mealObj.price}
-                  qty={mealObj.quantity}
-                  onRemove={removeFromCartHandler.bind(null, mealObj.id)}
-                  onAdd={addToCartHandler.bind(null, mealObj)}
-                />
-              );
-            })}
-          </ul>
-          <div className={classes.cart_mealPrice}>
-            <h2>Total Amount</h2>
-            <h2>${totalAmount}</h2>
-          </div>
-          <div className={classes.cart_buttons}>
-            <Button
-              className={classes.closeButton}
-              onClick={props.onhideCart}
-              name="Close"
-            />
-            <Button className={classes.orderButton} name="Order" />
+          <div className={classes.innerCart}>
+            <ul>
+              {cartCtx.items.map((mealObj) => {
+                return (
+                  <CartItem
+                    key={mealObj.id}
+                    name={mealObj.mealName}
+                    price={mealObj.price}
+                    qty={mealObj.quantity}
+                    onRemove={removeFromCartHandler.bind(null, mealObj.id)}
+                    onAdd={addToCartHandler.bind(null, mealObj)}
+                  />
+                );
+              })}
+            </ul>
+            <div className={classes.cart_mealPrice}>
+              <h2>Total Amount</h2>
+              <h2>${totalAmount}</h2>
+            </div>
+            <div className={classes.cart_buttons}>
+              <Button
+                className={classes.closeButton}
+                onClick={props.onhideCart}
+                name="Close"
+              />
+              <Button className={classes.orderButton} name="Order" />
+            </div>
           </div>
         </Card>
       </>
