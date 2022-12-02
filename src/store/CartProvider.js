@@ -3,8 +3,11 @@ import CartContext from './cart-context.js';
 
 const CartProvider = (props) => {
   const [items, setItems] = React.useState([]);
+  const [totalAmount, setTotalAmount] = React.useState(0);
 
   const addItemToCartHandler = (item) => {
+    setTotalAmount((prev) => prev + item.quantity * item.price);
+
     setItems((prevVal) => {
       return [...prevVal, item];
     });
@@ -14,6 +17,7 @@ const CartProvider = (props) => {
 
   const cartContext = {
     items: items,
+    totalAmount: totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };

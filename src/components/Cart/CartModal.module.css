@@ -7,7 +7,8 @@
   bottom: 0;
   margin: auto;
   width: 40%;
-  height: 10rem;
+  max-height: 20rem;
+  overflow: scroll;
   z-index: 100;
   padding: 1rem;
 }
