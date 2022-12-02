@@ -9,6 +9,16 @@ import CartItem from './CartItem.js';
 const CartModal = (props) => {
   const cartCtx = React.useContext(CartContext);
 
+  let totalAmount = `${cartCtx.totalAmount.toFixed(2)}`;
+
+  const removeFromCartHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+
+  const addToCartHandler = (item) => {
+    cartCtx.addItem({ ...item, quantity: 1 });
+  };
+
   const Cart = () => {
     return (
       <>
@@ -22,13 +32,15 @@ const CartModal = (props) => {
                   name={mealObj.mealName}
                   price={mealObj.price}
                   qty={mealObj.quantity}
+                  onRemove={removeFromCartHandler.bind(null, mealObj.id)}
+                  onAdd={addToCartHandler.bind(null, mealObj)}
                 />
               );
             })}
           </ul>
           <div className={classes.cart_mealPrice}>
             <h2>Total Amount</h2>
-            <h2>${cartCtx.totalAmount}</h2>
+            <h2>${totalAmount}</h2>
           </div>
           <div className={classes.cart_buttons}>
             <Button

@@ -5,6 +5,8 @@ const CartProvider = (props) => {
   const [items, setItems] = React.useState([]);
   const [totalAmount, setTotalAmount] = React.useState(0);
 
+  console.log('cart provider on duty sir');
+
   const addItemToCartHandler = (item) => {
     setTotalAmount((prev) => prev + Number(item.quantity) * item.price);
 
@@ -18,7 +20,6 @@ const CartProvider = (props) => {
           Number(updatedItems[itemIndex].quantity) + Number(item.quantity);
         return updatedItems;
       });
-      // [itemIndex].amount += action.item.amount;
     } else {
       setItems((prevVal) => {
         return [...prevVal, item];
@@ -26,7 +27,27 @@ const CartProvider = (props) => {
     }
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {
+    const itemIndex = items.findIndex((arrItem) => arrItem.id === id);
+    const existingItem = items[itemIndex];
+
+    // decrease total amount by item price
+    setTotalAmount((prev) => prev - existingItem.price);
+
+    if (existingItem.quantity > 1) {
+      // decrease quantity by 1
+      setItems((prev) => {
+        let updatedItems = [...prev];
+        updatedItems[itemIndex].quantity =
+          Number(updatedItems[itemIndex].quantity) - 1;
+
+        return updatedItems;
+      });
+    } else {
+      // remove this item from cart
+      setItems((prev) => prev.filter((item) => item.id != id));
+    }
+  };
 
   const cartContext = {
     items: items,
