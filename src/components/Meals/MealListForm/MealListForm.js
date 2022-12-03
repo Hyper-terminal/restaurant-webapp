@@ -15,7 +15,7 @@ const MealListForm = (props) => {
   const addItemToCart = (event) => {
     event.preventDefault();
 
-    let quantity = event.target.meal_count.value;
+    let quantity = Number(event.target.meal_count.value);
 
     cartCtx.addItem({ ...props.item, quantity: quantity });
 

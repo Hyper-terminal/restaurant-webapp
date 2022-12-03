@@ -2,14 +2,14 @@ import React from 'react';
 
 import Card from '../../UI/Card/Card';
 import classes from './Summary.module.css';
-import mealsImage from '../../../images/meal.jpg';
+import mealImage from '../../../assets/meal.jpg';
 
 const Summary = () => {
   return (
     <>
       <div className={classes.container}>
         <img
-          src="https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?w=1060"
+          src={mealImage}
           alt="A table full of delicious food"
         />
       </div>

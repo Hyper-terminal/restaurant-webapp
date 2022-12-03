@@ -1,57 +1,25 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import CartContext from './cart-context.js';
+import CartReducer from './cartReducer.js';
 
 const CartProvider = (props) => {
-  const [items, setItems] = React.useState([]);
-  const [totalAmount, setTotalAmount] = React.useState(0);
 
-  console.log('cart provider on duty sir');
+  const [cart, cartDispatcher] = useReducer(CartReducer, {
+    items: [],
+    cartTotalAmount: 0
+  });
 
   const addItemToCartHandler = (item) => {
-    setTotalAmount((prev) => prev + Number(item.quantity) * item.price);
-
-    // check if item already exists or not
-    const itemIndex = items.findIndex((arrItem) => arrItem.id === item.id);
-
-    if (itemIndex >= 0) {
-      setItems((prev) => {
-        let updatedItems = [...prev];
-        updatedItems[itemIndex].quantity =
-          Number(updatedItems[itemIndex].quantity) + Number(item.quantity);
-        return updatedItems;
-      });
-    } else {
-      setItems((prevVal) => {
-        return [...prevVal, item];
-      });
-    }
+    cartDispatcher({ type: "ADD_ITEMS", item: item })
   };
 
   const removeItemFromCartHandler = (id) => {
-    const itemIndex = items.findIndex((arrItem) => arrItem.id === id);
-    const existingItem = items[itemIndex];
-
-    // decrease total amount by item price
-    setTotalAmount((prev) => prev - existingItem.price);
-
-    if (existingItem.quantity > 1) {
-      // decrease quantity by 1
-      setItems((prev) => {
-        let updatedItems = [...prev];
-        updatedItems[itemIndex].quantity =
-          Number(updatedItems[itemIndex].quantity) - 1;
-
-        return updatedItems;
-      });
-    } else {
-      // remove this item from cart
-      setItems((prev) => prev.filter((item) => item.id != id));
-    }
+    cartDispatcher({type: "REMOVE_ITEMS", id: id})
   };
 
   const cartContext = {
-    items: items,
-    totalAmount: totalAmount,
+    items: cart.items,
+    totalAmount: cart.cartTotalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
